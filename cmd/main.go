@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/blackNIKboard/Jefferson-Cylinder/modules"
+	"github.com/blackNIKboard/Jefferson-Cylinder/models"
 )
 
 func main() {
