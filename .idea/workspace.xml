@@ -26,10 +26,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ae848958-6fd0-4868-a6e7-d2d5c359760a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Jefferson-Cylinder" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cyph.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/file.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test1.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test1_init.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test1_shuffled.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/disc.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/cylinder/disc.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/go.mod" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,27 +68,38 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
+    <property name="go.vendoring.notification.had.been.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/models/cylinder" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Go Build.decrypt">
+    <configuration name="decrypt" type="GoApplicationRunConfiguration" factoryName="Go Application">
       <module name="Jefferson-Cylinder" />
       <working_directory value="$PROJECT_DIR$" />
+      <parameters value="-action=true -file=cyph.txt -sequence=$Prompt$" />
       <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/cmd/main.go" />
+      <filePath value="$PROJECT_DIR$/main.go" />
       <directory value="$PROJECT_DIR$" />
       <method v="2" />
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Go Build.go build main.go" />
-      </list>
-    </recent_temporary>
+    <configuration name="encrypt" type="GoApplicationRunConfiguration" factoryName="Go Application">
+      <module name="Jefferson-Cylinder" />
+      <working_directory value="$PROJECT_DIR$" />
+      <parameters value="-action=false -sequence=testthisshit -position=$Prompt$ -file=cyph.txt" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/main.go" />
+      <directory value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Go Build.encrypt" />
+      <item itemvalue="Go Build.decrypt" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TypeScriptGeneratedFilesManager">
@@ -118,22 +134,46 @@
     <option name="LAST_COMMIT_MESSAGE" value="model initial" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1812" height="275" key="GridCell.Tab.0.bottom" timestamp="1599768440143">
+    <state x="322" y="203" width="1084" height="782" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599776154687">
       <screen x="62" y="27" width="1858" height="1053" />
     </state>
-    <state width="1812" height="275" key="GridCell.Tab.0.bottom/62.27.1858.1053@62.27.1858.1053" timestamp="1599768440143" />
-    <state width="1812" height="275" key="GridCell.Tab.0.center" timestamp="1599768440141">
+    <state x="322" y="203" width="1084" height="782" key="#com.intellij.execution.impl.EditConfigurationsDialog/62.27.1858.1053@62.27.1858.1053" timestamp="1599776154687" />
+    <state x="647" y="302" width="424" height="591" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1599776151017">
       <screen x="62" y="27" width="1858" height="1053" />
     </state>
-    <state width="1812" height="275" key="GridCell.Tab.0.center/62.27.1858.1053@62.27.1858.1053" timestamp="1599768440141" />
-    <state width="1812" height="275" key="GridCell.Tab.0.left" timestamp="1599768440141">
+    <state x="647" y="302" width="424" height="591" key="#com.intellij.ide.macro.MacrosDialog/62.27.1858.1053@62.27.1858.1053" timestamp="1599776151017" />
+    <state width="1812" height="275" key="GridCell.Tab.0.bottom" timestamp="1599776179663">
       <screen x="62" y="27" width="1858" height="1053" />
     </state>
-    <state width="1812" height="275" key="GridCell.Tab.0.left/62.27.1858.1053@62.27.1858.1053" timestamp="1599768440141" />
-    <state width="1812" height="275" key="GridCell.Tab.0.right" timestamp="1599768440142">
+    <state width="1812" height="275" key="GridCell.Tab.0.bottom/62.27.1858.1053@62.27.1858.1053" timestamp="1599776179663" />
+    <state width="1812" height="275" key="GridCell.Tab.0.center" timestamp="1599776179661">
       <screen x="62" y="27" width="1858" height="1053" />
     </state>
-    <state width="1812" height="275" key="GridCell.Tab.0.right/62.27.1858.1053@62.27.1858.1053" timestamp="1599768440142" />
+    <state width="1812" height="275" key="GridCell.Tab.0.center/62.27.1858.1053@62.27.1858.1053" timestamp="1599776179661" />
+    <state width="1812" height="275" key="GridCell.Tab.0.left" timestamp="1599776179660">
+      <screen x="62" y="27" width="1858" height="1053" />
+    </state>
+    <state width="1812" height="275" key="GridCell.Tab.0.left/62.27.1858.1053@62.27.1858.1053" timestamp="1599776179660" />
+    <state width="1812" height="275" key="GridCell.Tab.0.right" timestamp="1599776179662">
+      <screen x="62" y="27" width="1858" height="1053" />
+    </state>
+    <state width="1812" height="275" key="GridCell.Tab.0.right/62.27.1858.1053@62.27.1858.1053" timestamp="1599776179662" />
+    <state width="1812" height="340" key="GridCell.Tab.1.bottom" timestamp="1599773324952">
+      <screen x="62" y="27" width="1858" height="1053" />
+    </state>
+    <state width="1812" height="340" key="GridCell.Tab.1.bottom/62.27.1858.1053@62.27.1858.1053" timestamp="1599773324952" />
+    <state width="1812" height="340" key="GridCell.Tab.1.center" timestamp="1599773324951">
+      <screen x="62" y="27" width="1858" height="1053" />
+    </state>
+    <state width="1812" height="340" key="GridCell.Tab.1.center/62.27.1858.1053@62.27.1858.1053" timestamp="1599773324951" />
+    <state width="1812" height="340" key="GridCell.Tab.1.left" timestamp="1599773324951">
+      <screen x="62" y="27" width="1858" height="1053" />
+    </state>
+    <state width="1812" height="340" key="GridCell.Tab.1.left/62.27.1858.1053@62.27.1858.1053" timestamp="1599773324951" />
+    <state width="1812" height="340" key="GridCell.Tab.1.right" timestamp="1599773324951">
+      <screen x="62" y="27" width="1858" height="1053" />
+    </state>
+    <state width="1812" height="340" key="GridCell.Tab.1.right/62.27.1858.1053@62.27.1858.1053" timestamp="1599773324951" />
     <state x="238" y="121" width="1486" height="879" key="MergeDialog" timestamp="1599767610402">
       <screen x="62" y="27" width="1858" height="1053" />
     </state>
@@ -142,9 +182,9 @@
       <screen x="62" y="27" width="1858" height="1053" />
     </state>
     <state x="622" y="316" width="728" height="482" key="MultipleFileMergeDialog/62.27.1858.1053@62.27.1858.1053" timestamp="1599767610412" />
-    <state x="586" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1599768089453">
+    <state x="586" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1599768469915">
       <screen x="62" y="27" width="1858" height="1053" />
     </state>
-    <state x="586" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2/62.27.1858.1053@62.27.1858.1053" timestamp="1599768089453" />
+    <state x="586" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2/62.27.1858.1053@62.27.1858.1053" timestamp="1599768469915" />
   </component>
 </project>
