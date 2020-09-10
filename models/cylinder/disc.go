@@ -1,4 +1,4 @@
-package models
+package cylinder
 
 type Disc struct {
 	Sequence string
