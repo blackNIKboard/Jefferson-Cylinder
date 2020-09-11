@@ -1,3 +1,5 @@
+//nolint:gochecknoglobals
+
 package main
 
 import (
@@ -30,6 +32,8 @@ func main() {
 		res := cyl.encode(*sequence, *position)
 		cyl.storeShuffle(*cypher)
 		fmt.Println(res)
+		fmt.Println()
+		freqAnalyze(res)
 	}
 
 	if *action == true {
@@ -59,6 +63,29 @@ func (d *Disc) rotate(letter rune) {
 		inRune[0] = temp
 	}
 	d.Sequence = string(inRune)
+}
+
+func freqAnalyze(str string) {
+	results := [len(alphabet)]int{0}
+
+	for i := 0; i < len(str); i++ {
+		for j := 0; j < len(alphabet); j++ {
+			if str[i] == alphabet[j] {
+				results[j]++
+			}
+		}
+	}
+
+	sum := 0
+
+	for i := 0; i < len(alphabet); i++ {
+		sum += results[i]
+		if results[i] != 0 {
+			fmt.Printf("%c = %d\n", alphabet[i], results[i])
+		}
+	}
+
+	fmt.Printf("\nlength = %d\n", sum)
 }
 
 func (c *Cylinder) store(filename string) {
