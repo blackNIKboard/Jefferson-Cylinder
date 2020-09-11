@@ -1,5 +1,3 @@
-//nolint:gochecknoglobals
-
 package main
 
 import (
@@ -16,10 +14,10 @@ import (
 const alphabet = "abcdefghijklmnopqrstuvwxyz"
 
 var (
-	action   = flag.Bool("action", false, "action to perform (true to decrypt)")
-	cypher   = flag.String("file", "", "filename")
-	sequence = flag.String("sequence", "", "sequence to encrypt/decrypt")
-	position = flag.Int("position", 0, "position to read encrypted")
+	action   = flag.Bool("action", false, "action to perform (true to decrypt)") //nolint:gochecknoglobals
+	cypher   = flag.String("file", "", "filename")                               //nolint:gochecknoglobals
+	sequence = flag.String("sequence", "", "sequence to encrypt/decrypt")        //nolint:gochecknoglobals
+	position = flag.Int("position", 0, "position to read encrypted")             //nolint:gochecknoglobals
 )
 
 func main() {
@@ -27,7 +25,7 @@ func main() {
 
 	cyl := new(Cylinder)
 
-	if *action == false {
+	if !*action {
 		cyl.init(len(*sequence))
 		res := cyl.encode(*sequence, *position)
 		cyl.storeShuffle(*cypher)
@@ -36,7 +34,7 @@ func main() {
 		freqAnalyze(res)
 	}
 
-	if *action == true {
+	if *action {
 		cyl.read(*cypher)
 		cyl.decode(*sequence)
 	}
@@ -62,6 +60,7 @@ func (d *Disc) rotate(letter rune) {
 
 		inRune[0] = temp
 	}
+
 	d.Sequence = string(inRune)
 }
 
@@ -80,6 +79,7 @@ func freqAnalyze(str string) {
 
 	for i := 0; i < len(alphabet); i++ {
 		sum += results[i]
+
 		if results[i] != 0 {
 			fmt.Printf("%c = %d\n", alphabet[i], results[i])
 		}
@@ -97,7 +97,11 @@ func (c *Cylinder) store(filename string) {
 	}
 	defer cypher.Close()
 
-	cypher.WriteString(strconv.Itoa(c.Height) + "\n")
+	_, err = cypher.WriteString(strconv.Itoa(c.Height) + "\n")
+	if err != nil {
+		fmt.Println("Unable to create file:", err)
+		os.Exit(1)
+	}
 
 	for i := 0; i < c.Height; i++ {
 		_, err = cypher.WriteString(c.Discs[i].Sequence + "\n")
@@ -185,7 +189,7 @@ func (c *Cylinder) decode(cypher string) {
 func (d *Disc) shuffle() {
 	inRune := []rune(d.Sequence)
 
-	r := rand.New(rand.NewSource(time.Now().Unix()))
+	r := rand.New(rand.NewSource(time.Now().Unix())) //nolint:gosec
 
 	for n := len(inRune); n > 0; n-- {
 		randIndex := r.Intn(n)
