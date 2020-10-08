@@ -14,6 +14,7 @@ import (
 const alphabet = "abcdefghijklmnopqrstuvwxyz"
 
 var (
+	r = rand.New(rand.NewSource(time.Now().Unix()))
 	action   = flag.Bool("action", false, "action to perform (true to decrypt)") //nolint:gochecknoglobals
 	cypher   = flag.String("file", "", "filename")                               //nolint:gochecknoglobals
 	sequence = flag.String("sequence", "", "sequence to encrypt/decrypt")        //nolint:gochecknoglobals
@@ -171,7 +172,7 @@ func (c *Cylinder) encode(text string, position int) string {
 
 func (c *Cylinder) storeShuffle(filename string) {
 	for i := 0; i < c.Height; i++ {
-		c.Discs[i].shuffle()
+		c.Discs[i].rotate(rune(alphabet[r.Intn(len(alphabet))]))
 	}
 	c.store(filename)
 }
@@ -188,8 +189,6 @@ func (c *Cylinder) decode(cypher string) {
 
 func (d *Disc) shuffle() {
 	inRune := []rune(d.Sequence)
-
-	r := rand.New(rand.NewSource(time.Now().Unix())) //nolint:gosec
 
 	for n := len(inRune); n > 0; n-- {
 		randIndex := r.Intn(n)
