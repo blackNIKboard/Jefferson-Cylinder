@@ -14,7 +14,7 @@ import (
 const alphabet = "abcdefghijklmnopqrstuvwxyz"
 
 var (
-	r = rand.New(rand.NewSource(time.Now().Unix()))
+	r        = rand.New(rand.NewSource(time.Now().Unix()))
 	action   = flag.Bool("action", false, "action to perform (true to decrypt)") //nolint:gochecknoglobals
 	cypher   = flag.String("file", "", "filename")                               //nolint:gochecknoglobals
 	sequence = flag.String("sequence", "", "sequence to encrypt/decrypt")        //nolint:gochecknoglobals
@@ -82,7 +82,8 @@ func freqAnalyze(str string) {
 		sum += results[i]
 
 		if results[i] != 0 {
-			fmt.Printf("%c = %d\n", alphabet[i], results[i])
+			fmt.Printf("%c = %d, percentage = %f\n", alphabet[i], results[i],
+				float32(results[i])/float32(len(str))*100)
 		}
 	}
 
